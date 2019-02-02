@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: IntegracionRedesSociales
+  datasource:
+      url: jdbc:mysql://localhost:3306/redessocialesdb?useSSL=false
+      username: root
+      password: root
+  jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+        naming:
+          strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL5Dialect
+  thymeleaf:
+    cache: false
+  mvc:
+    favicon:
+      enabled: true
+
+customDataSource:
+  url: jdbc:mysql://localhost:3306/backendndb?useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+  username: root
+  password: HVMQ1yWkf7xVMFfEACkh8w==
+  className: com.mysql.cj.jdbc.Driver
+
+
+logging:
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
+  level.com.lmv: DEBUG
+  level.org.hibernate.SQL: ERROR
+  level.org.springframework.web.filter.CommonsRequestLoggingFilter: OFF
+  file: log/BackendNServicesLog.log
